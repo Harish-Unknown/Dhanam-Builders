@@ -5,14 +5,17 @@ import car2 from '/images/carosuel2.png'
 
 function HeroCarousel() {
   return (
-    <Carousel>
-      <Carousel.Item>
-        <img className='d-block w-100 h-[54vh] brightness-[100%] object-cover' src={car1} alt=""/>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img className='d-block w-100 h-[54vh] brightness-[100%] object-cover' src={car2} alt=""/>
-      </Carousel.Item>
-    </Carousel>
+    <div className="mt-[100px]">
+      <Carousel>
+        <Carousel.Item>
+          <img className='d-block w-100 h-[54vh] brightness-[100%] object-cover' src={car1} alt="" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className='d-block w-100 h-[54vh] brightness-[100%] object-cover' src={car2} alt="" />
+        </Carousel.Item>
+      </Carousel>
+    </div>
+
   )
 }
 

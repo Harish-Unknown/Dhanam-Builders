@@ -39,7 +39,7 @@ function Footer() {
                         <h2 className="mb-6 text-md font-bold text-gray-400 uppercase">Contact Info</h2>
                         <ul className="text-gray-200 font-medium">
                             <div className='flex justify-center items-start'>
-                                <FaLocationDot className='text-[1.3rem] ml-[-17px] mr-3' />
+                                <FaLocationDot className='text-[30px] lg:text-[1.3rem] lg:ml-[-17px] mr-3' />
                                 <li className="mb-4">Door.No.11/192, Kalaignar Salai 1st Street, Kovilambakam, Chennai - 600117.</li>
                             </div>
                             <div className='flex justify-start items-start'>
