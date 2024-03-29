@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@layer base {
+  *{
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+.carousel-indicators button {
+  width: 40px !important;
+  height: 4px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.custom-box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.35) -5px 10px 15px;
+}
+
+@media (max-width:520px) {
+  .ic{
+    font-size: 35px;
+  }
+}
+
+.slick-next{
+  color: #000 !important;
+}
+
+.slick-prev{
+  color: #000 !important;
+}
