@@ -39,7 +39,7 @@ function NavBar() {
         <nav className='bg-[#372739] fixed w-full top-0 z-50'>
             <div className='h-[100px] font-bold flex justify-between z-50 text-[#E3E4DB] py-[12px] px-10 lg:px-20'>
                 <div className='flex items-center'>
-                    <span className='text-3xl font-bold'><img src={logo} className='w-[110px]' alt='' /></span>
+                    <span className='text-3xl font-bold'><img src={logo} className='w-[110px] ml-[-15px] md:ml-0' alt='' /></span>
                 </div>
                 <div className='md:hidden flex justify-center items-center'>
                     <h5>Dhanam Builders</h5>
