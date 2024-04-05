@@ -193,7 +193,7 @@ const SwiperSlider = () => {
                         <line x1="1" y1="0%" x2="1" y2="100%" stroke="#747264" />
                     </svg>
                 </div>
-                <div className='w-3/4 xl:w-[57%] mx-auto mb-4 xl:mb-0'>
+                <div className='w-[85%] xl:w-[57%] mx-auto mb-4 xl:mb-0'>
                     <div className='p-4 text-center'>
                         <h1 className='text-3xl mb-2 md:text-4xl font-bold'>Delivered Projects</h1>
                     </div>
