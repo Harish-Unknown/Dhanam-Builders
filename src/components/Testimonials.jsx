@@ -1,12 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Testimonials() {
+    useEffect(() => {
+        AOS.init();
+      }, [])
     return (
         <div name='Testimonials' className="py-20 mx-auto px-10 w-full bg-[#c6afc8]">
             <section className="pb-22 text-center w-full">
-                <h2 className="pb-[60px] text-4xl font-bold">Testimonials</h2>
+                <h2 data-aos="fade-up" className="pb-[60px] text-4xl font-bold">Testimonials</h2>
 
-                <div className="grid gap-x-8 md:grid-cols-3 lg:gap-x-12">
+                <div data-aos="fade-up" className="grid gap-x-8 md:grid-cols-3 lg:gap-x-12">
                     <div className="mb-12 md:mb-0 border-2 p-3 rounded-xl bg-[#f1e7ec] transition duration-500 transform hover:bg-[#e4e1e3] hover:scale-[1.03]">
                         {/* <div className="mb-6 flex justify-center">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).jpg"

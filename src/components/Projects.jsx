@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaRupeeSign } from 'react-icons/fa';
 import Box from '@mui/material/Box';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const customArrowStyles = `
     .slick-prev:before, .slick-next:before {
@@ -18,6 +20,10 @@ const customArrowStyles = `
 
 
 const SwiperSlider = () => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     const settings = {
         dots: true,
         infinite: true,
@@ -149,10 +155,10 @@ const SwiperSlider = () => {
             <style>{customArrowStyles}</style>
             <div className='flex flex-col xl:flex-row'>
                 <div className='w-full xl:w-1/3 '>
-                    <div className='p-4 text-center'>
+                    <div data-aos="fade-up" className='p-4 text-center'>
                         <h1 className='text-3xl mb-2 md:text-4xl font-bold'>Current Projects</h1>
                     </div>
-                    <div className='w-[85%] mx-auto pb-5'>
+                    <div data-aos="fade-up" className='w-[85%] mx-auto pb-5'>
                         <Slider {...settings}>
                             {data.map((d, index) => (
                                 <div key={index} className='flex p-2'>
@@ -194,42 +200,45 @@ const SwiperSlider = () => {
                     </svg>
                 </div>
                 <div className='w-[85%] xl:w-[57%] mx-auto mb-4 xl:mb-0'>
-                    <div className='p-4 text-center'>
+                    <div data-aos="fade-up" className='p-4 text-center'>
                         <h1 className='text-3xl mb-2 md:text-4xl font-bold'>Delivered Projects</h1>
                     </div>
-                    <Slider {...setting}>
-                        {data1.map((d, index) => (
-                            <div key={index} className='flex p-2'>
-                                <Card sx={{ backgroundColor: '#f1e7ec', display: 'flex', flexDirection: 'column', borderRadius: '15px', boxShadow: 'rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em' }}>
-                                    <Box sx={{ display: 'flex', flexDirection: 'column', height: '300px', width: '100%' }}>
-                                        <CardContent sx={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
-                                            <Typography className='p-2 text-start' fontSize="19px" fontWeight="900">
-                                                {d.title}
-                                            </Typography>
-                                            <Typography className='p-2' fontSize="17px" fontWeight="bold">
-                                                {d.type}
-                                            </Typography>
-                                            <Typography className='p-2 text-[16px]'>
-                                                <span className='font-bold'>Contract: </span> {d.work}
-                                            </Typography>
-                                            <Typography className='p-2 text-[16px]'>
-                                                <span className='font-bold'>Builtup Area: </span>  {d.area}
-                                            </Typography>
-                                            <Typography className='flex items-center text-[#9D3C72] p-2' fontSize="20px" fontWeight="900">
-                                                <span className='text-black'>Project Value: </span> <FaRupeeSign /> {d.value}
-                                            </Typography>
-                                        </CardContent>
-                                    </Box>
-                                    <CardMedia
-                                        component="img"
-                                        image={d.img}
-                                        alt="Project Image"
-                                        style={{ height: '170px', objectFit: 'cover' }}
-                                    />
-                                </Card>
-                            </div>
-                        ))}
-                    </Slider>
+                    <div data-aos="fade-up" >
+                        <Slider {...setting}>
+                            {data1.map((d, index) => (
+                                <div key={index} className='flex p-2'>
+                                    <Card sx={{ backgroundColor: '#f1e7ec', display: 'flex', flexDirection: 'column', borderRadius: '15px', boxShadow: 'rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em' }}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', height: '300px', width: '100%' }}>
+                                            <CardContent sx={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
+                                                <Typography className='p-2 text-start' fontSize="19px" fontWeight="900">
+                                                    {d.title}
+                                                </Typography>
+                                                <Typography className='p-2' fontSize="17px" fontWeight="bold">
+                                                    {d.type}
+                                                </Typography>
+                                                <Typography className='p-2 text-[16px]'>
+                                                    <span className='font-bold'>Contract: </span> {d.work}
+                                                </Typography>
+                                                <Typography className='p-2 text-[16px]'>
+                                                    <span className='font-bold'>Builtup Area: </span>  {d.area}
+                                                </Typography>
+                                                <Typography className='flex items-center text-[#9D3C72] p-2' fontSize="20px" fontWeight="900">
+                                                    <span className='text-black'>Project Value: </span> <FaRupeeSign /> {d.value}
+                                                </Typography>
+                                            </CardContent>
+                                        </Box>
+                                        <CardMedia
+                                            component="img"
+                                            image={d.img}
+                                            alt="Project Image"
+                                            style={{ height: '170px', objectFit: 'cover' }}
+                                        />
+                                    </Card>
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+
                 </div>
             </div>
         </div>
